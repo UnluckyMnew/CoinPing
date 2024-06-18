@@ -1,0 +1,137 @@
+@use "../../../styles/global" as *;
+
+// .main__section {}
+
+.main__content {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    padding: 15px 0 15px 5%;
+    color: $color-100;
+    font-size: 4.5rem;
+    background: $color-600;
+
+    @media (max-width: 850px) {
+      font-size: 4rem;
+      padding: 10px 0 10px 5%;
+    }
+
+    @media (max-width: 700px) {
+      font-size: 3rem;
+      padding: 5px 0 5px 5%;
+    }
+
+    @media (max-width: 500px) {
+      font-size: 2rem;
+      padding: 5px 0 5px 5%;
+    }
+
+    & span {
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      background-image: $color-green-blue;
+    }
+  }
+
+  &--coin__list {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+    overflow-x: auto;
+
+    &--top {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      color: $color-100;
+      font-size: $h4-size;
+      padding: 1.5rem;
+      text-align: right;
+      font-weight: 500;
+      background: $color-400;
+      gap: 2rem;
+
+      @media (max-width: 850px) {
+        font-size: 1.6rem;
+      }
+
+      @media (max-width: 700px) {
+        font-size: 1.4rem;
+      }
+    }
+
+    &--row {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .coin__row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    color: $color-100;
+    font-size: 2rem;
+    padding: .5rem;
+    text-align: right;
+    font-weight: 500;
+    height: auto;
+    border-bottom: $border-gray;
+    align-items: center;
+    gap: 2rem;
+    user-select: none;
+
+    @media (max-width: 850px) {
+      font-size: $text-normal;
+    }
+
+    @media (max-width: 700px) {
+      font-size: 1.4rem;
+      padding: 1rem .5rem;
+    }
+
+    &:hover {
+      background-color: $color-500;
+      cursor: pointer;
+    }
+
+    &--title {
+      max-width: 20rem;
+      min-width: 13rem;
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 5rem;
+        height: 5rem;
+
+        @media (max-width: 850px) {
+          width: 4rem;
+          height: 4rem;
+        }
+
+        @media (max-width: 700px) {
+          width: 3rem;
+          height: 3rem;
+        }
+      }
+
+      .coin__name {
+        font-size: $text-normal;
+        margin-left: .4rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        .coin__symbol {
+          color: $green;
+          font-size: $text-mini;
+          filter: drop-shadow(0 0 0.75rem $green) opacity(0.8);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+@use "../../../styles/global" as *;
+
+#footer {
+  display: flex;
+  background: $color-600;
+  color: $color-100;
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid $color-border;
+
+  & svg {
+    height: 15rem;
+    width: 20rem;
+  }
+}
+
+.footer-navigation,
+.footer-contact,
+.footer-social {
+  margin: 1rem;
+}
+
+.footer-navigation h3,
+.footer-contact h3,
+.footer-social h3 {
+  color: $color-100;
+  margin-bottom: 15px;
+}
+
+.footer-navigation ul,
+.footer-social .social-icons {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-navigation ul li,
+.social-icon {
+  margin-bottom: 1rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.footer-navigation ul li a,
+.social-icon {
+  color: $color-100;
+  text-decoration: none;
+}
+
+.social-icon {
+  display: inline-block;
+  padding: .8rem;
+  background: $color-500;
+  margin-right: .5rem;
+}
+
+.social-icon:hover,
+.footer-navigation ul li a:hover {
+  transform: scale(1.1);
+}
+
+.footer-art canvas {
+  max-width: 10rem;
+}
+
+@media (max-width: 600px) {
+  #picassoFooter {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-art canvas {
+    margin-top: 1rem;
+    max-width: 100%;
+  }
+}

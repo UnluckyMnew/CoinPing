@@ -1,0 +1,70 @@
+@use "../../../styles/global" as *;
+
+.growth-leaders {
+  display: flex;
+  flex-wrap: wrap;
+  border: $border-gray;
+  border-radius: $border-radius;
+
+  h4 {
+    padding: .8rem 0 .8rem 0;
+    width: 100%;
+    font-size: $h4-size;
+    color: $color-100;
+    text-transform: uppercase;
+  }
+
+  .coin__row {
+    width: 50%;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    -webkit-box-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: $text-normal;
+    cursor: pointer;
+
+    @media (max-width: 850px) {
+      font-size: $text-normal;
+    }
+
+    @media (max-width: 700px) {
+      font-size: 1.4rem;
+      padding: 1rem .5rem;
+    }
+
+    &:hover {
+      border-radius: $border-radius;
+      background-color: $color-500;
+      cursor: pointer;
+    }
+
+    &--title {
+      width: 50%;
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 5rem;
+        height: 5rem;
+
+        @media (max-width: 850px) {
+          width: 4rem;
+          height: 4rem;
+        }
+
+        @media (max-width: 700px) {
+          width: 3rem;
+          height: 3rem;
+        }
+      }
+
+      .coin__name {
+        font-size: 1.5rem;
+        margin-left: .5rem;
+      }
+    }
+  }
+}

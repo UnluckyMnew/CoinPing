@@ -1,0 +1,32 @@
+.page__wrapper {
+  background: #4f3b78;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  .page {
+    width: 3.7rem;
+    height: 3.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover {
+      background: #2f3344;
+    }
+
+    &__current {
+      scale: 1.2;
+      background: rgba(0, 0, 0, 0.5);
+      font-weight: bold;
+    }
+  }
+}

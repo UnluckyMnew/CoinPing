@@ -1,0 +1,66 @@
+@use "colors" as *;
+@use "variables" as *;
+@use "typography" as *;
+
+// --------------------------------
+/* W3C standard Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $green $color-600;
+}
+
+/* Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  height: 12px;
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: $color-600;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $green;
+  border-radius: 5px;
+  border: 3px solid $color-600;
+}
+
+// --------------------------------
+
+html {
+  font-size: 62.5%;
+  color: $color-100;
+  font-family: $big-font;
+  background: $color-600;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: $color-100;
+  transition: color $transition-duration linear;
+}
+
+// --------------------------------
+
+.container {
+  max-width: 135rem !important;
+  margin: 0 auto !important;
+  padding: 0 2rem !important;
+}
+
+.color-red {
+  color: rgb(255, 96, 96);
+  filter: opacity(.9);
+}
+
+.color-green {
+  color: rgb(96, 255, 96);
+  filter: opacity(.9);
+}
