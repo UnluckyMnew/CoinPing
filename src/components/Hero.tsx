@@ -9,7 +9,7 @@ export default function Hero() {
 					<div className='hero__content--title'>
 						<h1 className='animation__wrapper'>
 							<p>Crypto currencies</p>
-							{/* <section className='animation'>
+							<section className='animation'>
 								<div className='first'>
 									<div>Track</div>
 								</div>
@@ -19,7 +19,7 @@ export default function Hero() {
 								<div className='third'>
 									<div>Trade</div>
 								</div>
-							</section> */}
+							</section>
 						</h1>
 					</div>
 
