@@ -155,7 +155,7 @@ a {
 .container {
   max-width: 135rem !important;
   margin: 0 auto !important;
-  padding: 0 2rem !important;
+  padding: 0 0.5rem;
 }
 
 .color-red {
@@ -283,11 +283,6 @@ header .nav ul li a.active {
   padding: 5rem 2rem 0 2rem;
   position: relative;
 }
-@media (max-width: 1350px) {
-  .hero__content {
-    padding: 2rem 2rem 0 2rem;
-  }
-}
 .hero__content--title {
   position: relative;
   display: flex;
@@ -299,11 +294,28 @@ header .nav ul li a.active {
   font-size: 7rem;
   font-weight: bold;
   text-transform: uppercase;
+  text-wrap: nowrap;
 }
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   .hero__content--title .animation__wrapper {
     flex-direction: column;
     text-align: center;
+    font-size: 6rem;
+  }
+}
+@media (max-width: 768px) {
+  .hero__content--title .animation__wrapper {
+    font-size: 5rem;
+  }
+}
+@media (max-width: 600px) {
+  .hero__content--title .animation__wrapper {
+    font-size: 4rem;
+  }
+}
+@media (max-width: 480px) {
+  .hero__content--title .animation__wrapper {
+    font-size: 3rem;
   }
 }
 .hero__content--title .animation__wrapper p {
@@ -413,26 +425,19 @@ header .nav ul li a.active {
   flex-direction: column;
 }
 .main__content h2 {
-  padding: 15px 0 15px 5%;
+  padding: 2rem 0 2rem 5%;
   color: #e2dde7;
   font-size: 4.5rem;
   background: #0d0618;
 }
-@media (max-width: 850px) {
+@media (max-width: 1200px) {
   .main__content h2 {
     font-size: 4rem;
-    padding: 10px 0 10px 5%;
   }
 }
-@media (max-width: 700px) {
+@media (max-width: 992px) {
   .main__content h2 {
     font-size: 3rem;
-    padding: 5px 0 5px 5%;
-  }
-}
-@media (max-width: 500px) {
-  .main__content h2 {
-    font-size: 2rem;
     padding: 5px 0 5px 5%;
   }
 }
@@ -459,7 +464,6 @@ header .nav ul li a.active {
   text-align: right;
   font-weight: 500;
   background: #4f3b78;
-  gap: 2rem;
 }
 @media (max-width: 850px) {
   .main__content--coin__list--top {
@@ -469,6 +473,11 @@ header .nav ul li a.active {
 @media (max-width: 700px) {
   .main__content--coin__list--top {
     font-size: 1.4rem;
+  }
+}
+@media (max-width: 400px) {
+  .main__content--coin__list--top {
+    font-size: 1.2rem;
   }
 }
 .main__content--coin__list--row {
@@ -487,7 +496,6 @@ header .nav ul li a.active {
   height: auto;
   border-bottom: 1px solid #2f3344;
   align-items: center;
-  gap: 2rem;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -501,6 +509,11 @@ header .nav ul li a.active {
   .main__content .coin__row {
     font-size: 1.4rem;
     padding: 1rem 0.5rem;
+  }
+}
+@media (max-width: 400px) {
+  .main__content .coin__row {
+    font-size: 1.2rem;
   }
 }
 .main__content .coin__row:hover {
@@ -535,10 +548,20 @@ header .nav ul li a.active {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+@media (max-width: 700px) {
+  .main__content .coin__row--title .coin__name {
+    font-size: 1.4rem;
+  }
+}
 .main__content .coin__row--title .coin__name .coin__symbol {
   color: #0ecb81;
   font-size: 1.2rem;
   filter: drop-shadow(0 0 0.75rem #0ecb81) opacity(0.8);
+}
+@media (max-width: 700px) {
+  .main__content .coin__row--title .coin__name .coin__symbol {
+    font-size: 1rem;
+  }
 }
 
 .choose-container {
@@ -683,15 +706,10 @@ header .nav ul li a.active {
   font-size: 1.8rem;
   cursor: pointer;
 }
-@media (max-width: 850px) {
+@media (max-width: 550px) {
   .growth-leaders .coin__row {
-    font-size: 1.8rem;
-  }
-}
-@media (max-width: 700px) {
-  .growth-leaders .coin__row {
-    font-size: 1.4rem;
-    padding: 1rem 0.5rem;
+    justify-content: space-between;
+    width: 100%;
   }
 }
 .growth-leaders .coin__row:hover {
@@ -708,16 +726,10 @@ header .nav ul li a.active {
   width: 5rem;
   height: 5rem;
 }
-@media (max-width: 850px) {
+@media (max-width: 700px) {
   .growth-leaders .coin__row--title img {
     width: 4rem;
     height: 4rem;
-  }
-}
-@media (max-width: 700px) {
-  .growth-leaders .coin__row--title img {
-    width: 3rem;
-    height: 3rem;
   }
 }
 .growth-leaders .coin__row--title .coin__name {
@@ -750,15 +762,10 @@ header .nav ul li a.active {
   font-size: 1.8rem;
   cursor: pointer;
 }
-@media (max-width: 850px) {
+@media (max-width: 550px) {
   .growth-losers .coin__row {
-    font-size: 1.8rem;
-  }
-}
-@media (max-width: 700px) {
-  .growth-losers .coin__row {
-    font-size: 1.4rem;
-    padding: 1rem 0.5rem;
+    justify-content: space-between;
+    width: 100%;
   }
 }
 .growth-losers .coin__row:hover {
@@ -775,16 +782,10 @@ header .nav ul li a.active {
   width: 5rem;
   height: 5rem;
 }
-@media (max-width: 850px) {
+@media (max-width: 700px) {
   .growth-losers .coin__row--title img {
     width: 4rem;
     height: 4rem;
-  }
-}
-@media (max-width: 700px) {
-  .growth-losers .coin__row--title img {
-    width: 3rem;
-    height: 3rem;
   }
 }
 .growth-losers .coin__row--title .coin__name {

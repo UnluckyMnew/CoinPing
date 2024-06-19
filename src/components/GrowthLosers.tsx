@@ -4,6 +4,7 @@ import PostService from '../API/PostService'
 import { useFetching } from '../hooks/useFetching/useFetching'
 import { ICoins } from '../types/types'
 import Loader from './UI/Loader/Loader'
+
 const GrowthLosers = () => {
 	const [coins, setCoins] = useState<ICoins[] | null>(null)
 

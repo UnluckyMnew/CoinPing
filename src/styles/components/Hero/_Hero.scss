@@ -24,10 +24,6 @@
   padding: 5rem 2rem 0 2rem;
   position: relative;
 
-  @media (max-width: 1350px) {
-    padding: 2rem 2rem 0 2rem;
-  }
-
   // #video {
   //   z-index: -1;
   //   position: absolute;
@@ -50,10 +46,24 @@
       font-size: 7rem;
       font-weight: bold;
       text-transform: uppercase;
+      text-wrap: nowrap;
 
-      @media (max-width: 1000px) {
+      @media (max-width: 1200px) {
         flex-direction: column;
         text-align: center;
+        font-size: 6rem;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 5rem;
+      }
+
+      @media (max-width: 600px) {
+        font-size: 4rem;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 3rem;
       }
 
       p {
