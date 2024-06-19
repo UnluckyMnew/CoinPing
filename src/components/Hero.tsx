@@ -6,14 +6,10 @@ export default function Hero() {
 		<>
 			<section id='hero' className='hero__section'>
 				<div className='hero__content'>
-					{/* <video preload='auto' loop muted autoPlay id='video'>
-						<source src='video/hero.webm' type='video/webm' />
-						<source src='video/hero.mov' type='video/mov' />
-					</video> */}
 					<div className='hero__content--title'>
 						<h1 className='animation__wrapper'>
 							<p>Crypto currencies</p>
-							<section className='animation'>
+							{/* <section className='animation'>
 								<div className='first'>
 									<div>Track</div>
 								</div>
@@ -23,7 +19,7 @@ export default function Hero() {
 								<div className='third'>
 									<div>Trade</div>
 								</div>
-							</section>
+							</section> */}
 						</h1>
 					</div>
 
