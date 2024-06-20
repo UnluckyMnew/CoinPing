@@ -681,20 +681,20 @@ header .nav ul li a.active {
   border-radius: 1rem;
 }
 
-.growth-leaders {
+.extra-table {
   display: flex;
   flex-wrap: wrap;
   border: 1px solid #2f3344;
   border-radius: 1rem;
 }
-.growth-leaders h4 {
+.extra-table h4 {
   padding: 0.8rem 0 0.8rem 0;
   width: 100%;
   font-size: 2.4rem;
   color: #e2dde7;
   text-transform: uppercase;
 }
-.growth-leaders .coin__row {
+.extra-table .coin__row {
   width: 50%;
   padding: 1rem 1.5rem;
   display: flex;
@@ -707,88 +707,32 @@ header .nav ul li a.active {
   cursor: pointer;
 }
 @media (max-width: 550px) {
-  .growth-leaders .coin__row {
+  .extra-table .coin__row {
     justify-content: space-between;
     width: 100%;
   }
 }
-.growth-leaders .coin__row:hover {
+.extra-table .coin__row:hover {
   border-radius: 1rem;
   background-color: #2f3344;
   cursor: pointer;
 }
-.growth-leaders .coin__row--title {
+.extra-table .coin__row--title {
   width: 50%;
   display: flex;
   align-items: center;
 }
-.growth-leaders .coin__row--title img {
+.extra-table .coin__row--title img {
   width: 5rem;
   height: 5rem;
 }
 @media (max-width: 700px) {
-  .growth-leaders .coin__row--title img {
+  .extra-table .coin__row--title img {
     width: 4rem;
     height: 4rem;
   }
 }
-.growth-leaders .coin__row--title .coin__name {
-  font-size: 1.5rem;
-  margin-left: 0.5rem;
-}
-
-.growth-losers {
-  display: flex;
-  flex-wrap: wrap;
-  border: 1px solid #2f3344;
-  border-radius: 1rem;
-}
-.growth-losers h4 {
-  padding: 0.8rem 0 0.8rem 0;
-  width: 100%;
-  font-size: 2.4rem;
-  color: #e2dde7;
-  text-transform: uppercase;
-}
-.growth-losers .coin__row {
-  width: 50%;
-  padding: 1rem 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  -webkit-box-align: center;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-size: 1.8rem;
-  cursor: pointer;
-}
-@media (max-width: 550px) {
-  .growth-losers .coin__row {
-    justify-content: space-between;
-    width: 100%;
-  }
-}
-.growth-losers .coin__row:hover {
-  border-radius: 1rem;
-  background-color: #2f3344;
-  cursor: pointer;
-}
-.growth-losers .coin__row--title {
-  width: 50%;
-  display: flex;
-  align-items: center;
-}
-.growth-losers .coin__row--title img {
-  width: 5rem;
-  height: 5rem;
-}
-@media (max-width: 700px) {
-  .growth-losers .coin__row--title img {
-    width: 4rem;
-    height: 4rem;
-  }
-}
-.growth-losers .coin__row--title .coin__name {
+.extra-table .coin__row--title .coin__name {
   font-size: 1.5rem;
   margin-left: 0.5rem;
 }

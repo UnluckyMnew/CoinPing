@@ -1,29 +1,21 @@
-import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import PostService from '../API/PostService'
-import { useFetching } from '../hooks/useFetching/useFetching'
 import { ICoins } from '../types/types'
 import Loader from './UI/Loader/Loader'
 
-const GrowthLosers = () => {
-	const [coins, setCoins] = useState<ICoins[] | null>(null)
+interface IExtraTableProps {
+	sortedCoins: ICoins[]
+	isLoading: boolean
+	coinError: any
+}
 
-	const [fetchCoins, isLoading, coinError] = useFetching(async () => {
-		const response = await PostService.getTotalCoinsCount()
-		setCoins(
-			response.data.sort(function (a, b) {
-				return a.price_change_percentage_24h - b.price_change_percentage_24h
-			})
-		)
-	})
-
-	useEffect(() => {
-		fetchCoins()
-	}, [])
-
+const ExtraTable: React.FC<IExtraTableProps> = ({
+	sortedCoins,
+	isLoading,
+	coinError,
+}) => {
 	return (
-		<div className='growth-losers'>
-			<h4>growth losers 24H</h4>
+		<div className='extra-table'>
+			<h4>growth leaders 24H</h4>
 			<>
 				{coinError && (
 					<h1
@@ -40,7 +32,7 @@ const GrowthLosers = () => {
 				{isLoading ? (
 					<Loader />
 				) : (
-					coins?.slice(0, 6).map(coin => (
+					sortedCoins.slice(0, 6).map(coin => (
 						<Link
 							to={`/home/${coin.id.toLowerCase()}`}
 							className='coin__row'
@@ -70,4 +62,4 @@ const GrowthLosers = () => {
 	)
 }
 
-export default GrowthLosers
+export default ExtraTable
