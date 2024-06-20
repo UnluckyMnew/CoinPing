@@ -1,5 +1,5 @@
 import ChooseBox from './ChooseBox.tsx'
-// import handImg from "/images/choose-main.png"
+import handImg from "../assets/images/chooseus/choose-main.png"
 
 export default function WhyUs() {
 	return (
@@ -28,8 +28,7 @@ export default function WhyUs() {
 							/>
 						</div>
 						<div className='choose-container__content__2'>
-							{/* <img src={handImg} alt='hand_img' /> */}
-							<p>hand img</p>
+							<img src={handImg} alt='hand_img' />
 						</div>
 						<div className='choose-container__content__3'>
 							<ChooseBox
