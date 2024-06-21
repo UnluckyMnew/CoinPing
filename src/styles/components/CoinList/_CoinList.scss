@@ -40,24 +40,34 @@
 
     &--top {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      color: $color-100;
-      font-size: $h4-size;
-      padding: 1.5rem;
-      text-align: right;
-      font-weight: 500;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
       background: $color-400;
 
-      @media (max-width: 850px) {
-        font-size: 1.6rem;
-      }
+      .sort-btn {
+        padding: 1.5rem 1rem;
+        height: 100%;
+        width: 100%;
+        background: transparent;
+        border: none;
+        color: $color-100;
+        font-size: $h4-size;
+        text-align: center;
 
-      @media (max-width: 700px) {
-        font-size: 1.4rem;
-      }
+        @media (max-width: 850px) {
+          font-size: 1.6rem;
+        }
 
-      @media (max-width: 400px) {
-        font-size: 1.2rem;
+        @media (max-width: 700px) {
+          font-size: 1.4rem;
+        }
+
+        @media (max-width: 400px) {
+          font-size: 1.2rem;
+        }
+
+        &:hover {
+          background: $color-500;
+        }
       }
     }
 
@@ -70,11 +80,11 @@
 
   .coin__row {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 2fr 1fr 1fr 1fr;
     color: $color-100;
     font-size: 2rem;
     padding: .5rem;
-    text-align: right;
+    text-align: center;
     font-weight: 500;
     height: auto;
     border-bottom: $border-gray;

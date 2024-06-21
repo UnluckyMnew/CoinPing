@@ -9,13 +9,19 @@ import { getPageCount, getPagesArray } from '../utils/pages'
 
 export default function CoinList() {
 	const [coins, setCoins] = useState<ICoins[] | null>(null)
+	const [sortedCoins, setSortedCoins] = useState<ICoins[] | null>(null)
 	const [totalPages, setTotalPages] = useState<number[]>([])
-	const [limit] = useState<number>(10)
+	const [limit] = useState<number>(15)
 	const [page, setPage] = useState<number>(1)
+	const [selectedSort, setSelectedSort] = useState({
+		selectedSort: '',
+		selectedSortCheck: false,
+	})
 
 	const [fetchCoins, isLoading, coinError] = useFetching(async () => {
 		const response = await PostService.getAll(limit, page)
 		setCoins(response.data)
+		setSortedCoins(response.data)
 	})
 
 	const [fetchTotalCoinsCount] = useFetching(async () => {
@@ -33,6 +39,48 @@ export default function CoinList() {
 		setPage(page)
 	}
 
+	const getSortSetting = (e: React.MouseEvent<HTMLButtonElement>): void => {
+		setSelectedSort(prevState => ({
+			...prevState,
+			selectedSort: (e.target as HTMLButtonElement).value,
+			selectedSortCheck: !prevState.selectedSortCheck,
+		}))
+	}
+
+	const sortCoins = () => {
+		// idk dry lmao*)
+		if (coins && selectedSort.selectedSortCheck) {
+			setSortedCoins(
+				[...coins].sort((a, b) => {
+					const valueA = a[selectedSort.selectedSort as keyof ICoins]
+					const valueB = b[selectedSort.selectedSort as keyof ICoins]
+					if (typeof valueA === 'string' && typeof valueB === 'string') {
+						return valueA.localeCompare(valueB)
+					} else {
+						return Number(valueA) - Number(valueB)
+					}
+				})
+			)
+		}
+		if (coins && !selectedSort.selectedSortCheck) {
+			setSortedCoins(
+				[...coins].sort((a, b) => {
+					const valueA = a[selectedSort.selectedSort as keyof ICoins]
+					const valueB = b[selectedSort.selectedSort as keyof ICoins]
+					if (typeof valueA === 'string' && typeof valueB === 'string') {
+						return valueB.localeCompare(valueA)
+					} else {
+						return Number(valueB) - Number(valueA)
+					}
+				})
+			)
+		}
+	}
+
+	useEffect(() => {
+		sortCoins()
+	}, [selectedSort])
+
 	return (
 		<div className='main__content' id='market'>
 			<h2>
@@ -40,10 +88,34 @@ export default function CoinList() {
 			</h2>
 			<div className='main__content--coin__list'>
 				<div className='main__content--coin__list--top'>
-					<p className='p--coin'>Coin</p>
-					<p className='p--price'>Price</p>
-					<p className='p--24hChange'>24h Change</p>
-					<p className='p--MarketCap'>Market Cap</p>
+					<button
+						value='id'
+						className='p--coin sort-btn'
+						onClick={getSortSetting}
+					>
+						Coin
+					</button>
+					<button
+						value='current_price'
+						className='p--price sort-btn'
+						onClick={getSortSetting}
+					>
+						Price
+					</button>
+					<button
+						value='price_change_percentage_24h'
+						className='p--24hChange sort-btn'
+						onClick={getSortSetting}
+					>
+						24h Change
+					</button>
+					<button
+						value='market_cap'
+						className='p--MarketCap sort-btn'
+						onClick={getSortSetting}
+					>
+						Market Cap
+					</button>
 				</div>
 				<div className='main__content--coin__list--row'>
 					{coinError && (
@@ -59,7 +131,7 @@ export default function CoinList() {
 						</h1>
 					)}
 					{isLoading && <Loader />}
-					{coins?.map(coin => (
+					{sortedCoins?.map(coin => (
 						<Link
 							to={`/home/${coin.id.toLowerCase()}`}
 							className='coin__row'
