@@ -21,7 +21,7 @@
 }
 
 .hero__content {
-  padding: 5rem 2rem 0 2rem;
+  padding: 5rem 0 0 0;
   position: relative;
 
   &--title {
@@ -137,8 +137,8 @@
   }
 
   &--extra__lists {
-    max-width: 131rem;
-    margin: 6rem auto 2rem auto;
+    max-width: 134rem;
+    margin: 5rem auto 1rem auto;
     align-items: center;
     display: flex;
     gap: 2rem;

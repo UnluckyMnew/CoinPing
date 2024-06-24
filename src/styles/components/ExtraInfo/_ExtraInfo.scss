@@ -1,0 +1,52 @@
+@use "../../global" as *;
+
+.extra-info {
+  position: relative;
+  margin: 1rem 0;
+  padding: 1rem;
+  border: $border-gray;
+  border-radius: $border-radius;
+
+  & .title {
+    color: $color-100;
+    margin-bottom: 1rem;
+    font-size: $h4-size;
+  }
+
+  & .info {
+    height: 2rem;
+    margin-bottom: 3.5rem;
+    line-height: 2rem;
+    color: $color-info;
+    font-size: $text-normal;
+    overflow: hidden;
+  }
+
+  & .info.active {
+    height: fit-content;
+  }
+
+  & .btn {
+    position: absolute;
+    bottom: 1rem;
+    font-size: $text-normal;
+    border: none;
+    color: $color-100;
+    background: transparent;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+    user-select: none;
+
+    &::after {
+      content: "⇅";
+      font-size: 2rem;
+    }
+
+    &:hover {
+      background: $color-400;
+    }
+  }
+}

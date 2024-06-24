@@ -6,6 +6,7 @@ import Pagination from '../components/UI/Pagination/Pagination'
 import { useFetching } from '../hooks/useFetching/useFetching'
 import { ICoins } from '../types/types'
 import { getPageCount, getPagesArray } from '../utils/pages'
+import ExtraInfoWrapper from './ExtraInfoWrapper'
 
 export default function CoinList() {
 	const [coins, setCoins] = useState<ICoins[] | null>(null)
@@ -83,6 +84,7 @@ export default function CoinList() {
 
 	return (
 		<div className='main__content' id='market'>
+			<ExtraInfoWrapper/>
 			<h2>
 				<span>Coin Update</span>
 			</h2>
