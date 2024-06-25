@@ -6,18 +6,21 @@
 }
 
 #coin {
+  padding: 5rem 0;
+  color: $color-100;
   font-size: $text-normal;
+}
+
+#first, #second, #fourth, #fifth {
+  padding: 1rem;
+  background: $color-600;
+  border: $border-gray;
+  border-radius: $border-radius;
 }
 
 .coin__content {
   display: flex;
   column-gap: $gap;
-
-  section {
-    padding: .5rem 1rem;
-    background: $color-600;
-    border-radius: 5px;
-  }
 
   &--main__information {
     display: flex;
@@ -27,7 +30,7 @@
     .main__information--top {
       display: flex;
       flex-direction: column;
-      row-gap: .5rem;
+      row-gap: 1rem;
 
       .top__title {
         @include flexRow();
@@ -65,8 +68,8 @@
           }
 
           .top__title--span__symbol {
+            color: $color-info;
             padding: .5rem 0;
-            filter: opacity(.5);
           }
 
           .top__title--span__rank {
@@ -77,12 +80,12 @@
         }
 
         .top__title--date {
-          margin-left: 25rem;
+          margin-left: 27rem;
           text-wrap: nowrap;
 
           &__genesis {
+            color: $color-info;
             padding: .5rem 0;
-            filter: opacity(.5);
           }
         }
       }
@@ -92,8 +95,6 @@
         width: fit-content;
         padding: .5rem;
         text-wrap: nowrap;
-        border: 1px solid $color-border;
-        border-radius: 5px;
         gap: .5rem;
       }
 
@@ -103,9 +104,9 @@
         width: fit-content;
         padding: .5rem;
         text-wrap: nowrap;
-        border: 1px solid $color-border;
-        border-radius: 5px;
         gap: .5rem;
+        background: #484c646d;
+        border-radius: $border-radius;
 
         .progress-container {
           height: 1rem;
@@ -116,7 +117,7 @@
           .progress {
             height: 100%;
             border-radius: 0.4rem;
-            background: $color-300;
+            background: $color-green-blue;
             transition: width 0.4s ease;
           }
         }
@@ -156,6 +157,7 @@
     }
 
     .main__information--description {
+      margin: 2rem 0;
       display: flex;
       flex-direction: column;
       row-gap: 1rem;
@@ -165,8 +167,13 @@
       }
 
       p {
+        color: $color-info;
+        text-align: justify;
+
         & a {
           color: $green;
+          filter: opacity(.5);
+          text-decoration: underline;
         }
       }
     }

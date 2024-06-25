@@ -82,7 +82,7 @@ export default function Coin() {
 					) : (
 						<>
 							<div className='coin__content--main__information'>
-								<section>
+								<section id='first'>
 									<div className='main__information--top'>
 										<div className='top__title'>
 											<div id='left'>
@@ -147,7 +147,7 @@ export default function Coin() {
 									</div>
 								</section>
 
-								<section>
+								<section id='second'>
 									<div className='main__information--table'>
 										<div className='table__grid'>
 											<div className='table__grid--item' id='1'>
@@ -199,7 +199,7 @@ export default function Coin() {
 									</div>
 								</section>
 
-								<section>
+								<section id='third'>
 									<div className='main__information--description'>
 										<h3>{coin?.name}</h3>
 										<p
@@ -210,7 +210,7 @@ export default function Coin() {
 									</div>
 								</section>
 
-								<section>
+								<section id='fourth'>
 									<div className='main__information--trend'>
 										<table className='trend__table'>
 											<thead className='trend__table--head'>
@@ -239,7 +239,7 @@ export default function Coin() {
 														<div>1H</div>
 													</td>
 													<td>
-														<div>{'$' + priceTrends[0]}</div>
+														<div>{priceTrends[0] + '$'}</div>
 													</td>
 													<td>
 														<div
@@ -263,7 +263,7 @@ export default function Coin() {
 														<div>24H</div>
 													</td>
 													<td>
-														<div>{'$' + priceTrends[1]}</div>
+														<div>{priceTrends[1] + '$'}</div>
 													</td>
 													<td>
 														<div
@@ -287,7 +287,7 @@ export default function Coin() {
 														<div>7d</div>
 													</td>
 													<td>
-														<div>{'$' + priceTrends[2]}</div>
+														<div>{priceTrends[2] + '$'}</div>
 													</td>
 													<td>
 														<div
@@ -311,7 +311,7 @@ export default function Coin() {
 														<div>30d</div>
 													</td>
 													<td>
-														<div>{'$' + priceTrends[3]}</div>
+														<div>{priceTrends[3] + '$'}</div>
 													</td>
 													<td>
 														<div
@@ -335,7 +335,7 @@ export default function Coin() {
 														<div>1y</div>
 													</td>
 													<td>
-														<div>{'$' + priceTrends[4]}</div>
+														<div>{priceTrends[4] + '$'}</div>
 													</td>
 													<td>
 														<div
@@ -361,7 +361,7 @@ export default function Coin() {
 							</div>
 
 							<aside className='coin__content--additional__information'>
-								<section>
+								<section id='fifth'>
 									<div className='additional__information--table'>
 										<h4>Ключевая информация</h4>
 

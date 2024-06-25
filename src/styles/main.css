@@ -135,7 +135,7 @@ input {
 
 html {
   font-size: 62.5%;
-  color: #e2dde7;
+  color: #d7d2dc;
   font-family: "Space Grotesk", sans-serif;
   background: #0d0618;
   scroll-behavior: smooth;
@@ -149,7 +149,7 @@ body {
 
 a {
   text-decoration: none;
-  color: #e2dde7;
+  color: #d7d2dc;
   transition: color 0.2s linear;
 }
 
@@ -186,14 +186,14 @@ header {
 header .logo {
   font-size: 2.8rem;
   font-weight: bold;
-  color: #e2dde7;
+  color: #d7d2dc;
 }
 header .nav ul {
   display: flex;
 }
 header .nav ul li a {
   display: block;
-  color: #e2dde7;
+  color: #d7d2dc;
   font-size: 2rem;
   padding: 1rem 2.5rem;
   border-radius: 5rem;
@@ -262,7 +262,7 @@ header .nav ul li a.active {
   .hamburger .line {
     width: 3rem;
     height: 0.3rem;
-    background: #e2dde7;
+    background: #d7d2dc;
     margin: 0.6rem 0;
   }
 }
@@ -341,13 +341,13 @@ header .nav ul li a.active {
   animation: text-animation 8s infinite;
 }
 .hero__content--title .animation__wrapper .animation .first div {
-  color: #e2dde7;
+  color: #d7d2dc;
 }
 .hero__content--title .animation__wrapper .animation .second div {
   color: #070a8f;
 }
 .hero__content--title .animation__wrapper .animation .third div {
-  color: #e2dde7;
+  color: #d7d2dc;
 }
 @keyframes text-animation {
   0% {
@@ -407,7 +407,7 @@ header .nav ul li a.active {
   gap: 1rem;
   padding: 2rem 4rem;
   background: linear-gradient(25deg, #0ecb81, #070a8f);
-  color: #e2dde7;
+  color: #d7d2dc;
   border-radius: 10rem;
   transition: all 0.2s;
   margin: 0 auto;
@@ -427,7 +427,7 @@ header .nav ul li a.active {
 }
 .main__content h2 {
   padding: 2rem 0 2rem 5%;
-  color: #e2dde7;
+  color: #d7d2dc;
   font-size: 4.5rem;
   background: #0d0618;
 }
@@ -467,7 +467,7 @@ header .nav ul li a.active {
   width: 100%;
   background: transparent;
   border: none;
-  color: #e2dde7;
+  color: #d7d2dc;
   font-size: 2.4rem;
   text-align: center;
 }
@@ -497,7 +497,7 @@ header .nav ul li a.active {
 .main__content .coin__row {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
-  color: #e2dde7;
+  color: #d7d2dc;
   font-size: 2rem;
   padding: 0.5rem;
   text-align: center;
@@ -581,7 +581,7 @@ header .nav ul li a.active {
 }
 .choose-container h2 {
   font-size: 3rem;
-  color: #e2dde7;
+  color: #d7d2dc;
   text-transform: uppercase;
   font-family: "Noto Sans Georgian", sans-serif;
   margin: 4rem 0;
@@ -595,7 +595,7 @@ header .nav ul li a.active {
 .choose-container__content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  color: #e2dde7;
+  color: #d7d2dc;
   font-size: 3rem;
   height: auto;
   gap: 2rem;
@@ -679,7 +679,7 @@ header .nav ul li a.active {
   font-size: 1.2rem;
   text-align: left;
   margin-top: 1rem;
-  color: #e2dde7;
+  color: #d7d2dc;
 }
 .choose-box i {
   background: linear-gradient(25deg, #0ecb81, #070a8f);
@@ -700,7 +700,7 @@ header .nav ul li a.active {
   padding: 0.8rem 0 0.8rem 0;
   width: 100%;
   font-size: 2.4rem;
-  color: #e2dde7;
+  color: #d7d2dc;
   text-transform: uppercase;
 }
 .extra-table .coin__row {
@@ -754,7 +754,7 @@ header .nav ul li a.active {
   border-radius: 1rem;
 }
 .extra-info .title {
-  color: #e2dde7;
+  color: #d7d2dc;
   margin-bottom: 1rem;
   font-size: 2.4rem;
 }
@@ -775,7 +775,7 @@ header .nav ul li a.active {
   bottom: 1rem;
   font-size: 1.8rem;
   border: none;
-  color: #e2dde7;
+  color: #d7d2dc;
   background: transparent;
   justify-content: center;
   align-items: center;
@@ -802,7 +802,7 @@ header .nav ul li a.active {
 #footer {
   display: flex;
   background: #0d0618;
-  color: #e2dde7;
+  color: #d7d2dc;
   padding: 2rem;
   display: flex;
   flex-wrap: wrap;
@@ -824,7 +824,7 @@ header .nav ul li a.active {
 .footer-navigation h3,
 .footer-contact h3,
 .footer-social h3 {
-  color: #e2dde7;
+  color: #d7d2dc;
   margin-bottom: 15px;
 }
 
@@ -842,7 +842,7 @@ header .nav ul li a.active {
 
 .footer-navigation ul li a,
 .social-icon {
-  color: #e2dde7;
+  color: #d7d2dc;
   text-decoration: none;
 }
 
@@ -878,18 +878,22 @@ header .nav ul li a.active {
 }
 
 #coin {
+  padding: 5rem 0;
+  color: #d7d2dc;
   font-size: 1.8rem;
+}
+
+#first, #second, #fourth, #fifth {
+  padding: 1rem;
+  background: #0d0618;
+  border: 1px solid #2f3344;
+  border-radius: 1rem;
 }
 
 .coin__content {
   display: flex;
   -moz-column-gap: 1rem;
        column-gap: 1rem;
-}
-.coin__content section {
-  padding: 0.5rem 1rem;
-  background: #0d0618;
-  border-radius: 5px;
 }
 .coin__content--main__information {
   display: flex;
@@ -899,7 +903,7 @@ header .nav ul li a.active {
 .coin__content--main__information .main__information--top {
   display: flex;
   flex-direction: column;
-  row-gap: 0.5rem;
+  row-gap: 1rem;
 }
 .coin__content--main__information .main__information--top .top__title {
   display: flex;
@@ -936,8 +940,8 @@ header .nav ul li a.active {
   padding: 0.5rem 0.1rem 0.5rem 0.5rem;
 }
 .coin__content--main__information .main__information--top .top__title .top__title--spans .top__title--span__symbol {
+  color: #484c64;
   padding: 0.5rem 0;
-  filter: opacity(0.5);
 }
 .coin__content--main__information .main__information--top .top__title .top__title--spans .top__title--span__rank {
   margin-left: 2rem;
@@ -945,12 +949,12 @@ header .nav ul li a.active {
   background: rgba(14, 203, 131, 0.1254901961);
 }
 .coin__content--main__information .main__information--top .top__title .top__title--date {
-  margin-left: 25rem;
+  margin-left: 27rem;
   text-wrap: nowrap;
 }
 .coin__content--main__information .main__information--top .top__title .top__title--date__genesis {
+  color: #484c64;
   padding: 0.5rem 0;
-  filter: opacity(0.5);
 }
 .coin__content--main__information .main__information--top .top__price {
   display: flex;
@@ -959,8 +963,6 @@ header .nav ul li a.active {
   width: fit-content;
   padding: 0.5rem;
   text-wrap: nowrap;
-  border: 1px solid #2f3344;
-  border-radius: 5px;
   gap: 0.5rem;
 }
 .coin__content--main__information .main__information--top .top__minmax {
@@ -971,9 +973,9 @@ header .nav ul li a.active {
   width: fit-content;
   padding: 0.5rem;
   text-wrap: nowrap;
-  border: 1px solid #2f3344;
-  border-radius: 5px;
   gap: 0.5rem;
+  background: rgba(72, 76, 100, 0.4274509804);
+  border-radius: 1rem;
 }
 .coin__content--main__information .main__information--top .top__minmax .progress-container {
   height: 1rem;
@@ -984,7 +986,7 @@ header .nav ul li a.active {
 .coin__content--main__information .main__information--top .top__minmax .progress-container .progress {
   height: 100%;
   border-radius: 0.4rem;
-  background: #927fbf;
+  background: linear-gradient(25deg, #0ecb81, #070a8f);
   transition: width 0.4s ease;
 }
 .coin__content--main__information .main__information--table {
@@ -1002,17 +1004,18 @@ header .nav ul li a.active {
 }
 .coin__content--main__information .main__information--table .table__grid--item p {
   margin-bottom: 0.5rem;
-  color: #e2dde7;
+  color: #d7d2dc;
 }
 .coin__content--main__information .main__information--table .table__grid--item p:last-child {
   margin: 0;
   text-align: center;
-  color: #e2dde7;
+  color: #d7d2dc;
 }
 .coin__content--main__information .main__information--table .table__grid--item div {
   color: #0ecb81;
 }
 .coin__content--main__information .main__information--description {
+  margin: 2rem 0;
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
@@ -1020,8 +1023,14 @@ header .nav ul li a.active {
 .coin__content--main__information .main__information--description h3 {
   font-size: 2.6rem;
 }
+.coin__content--main__information .main__information--description p {
+  color: #484c64;
+  text-align: justify;
+}
 .coin__content--main__information .main__information--description p a {
   color: #0ecb81;
+  filter: opacity(0.5);
+  text-decoration: underline;
 }
 .coin__content--main__information .main__information--trend .trend__table {
   position: relative;
