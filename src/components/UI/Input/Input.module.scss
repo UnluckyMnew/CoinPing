@@ -1,7 +1,11 @@
 .Input {
+	padding: .8rem;
 	color: #e2dde7;
-	font-size: 1.6rem;
+	font-size: 1.4rem;
 	background: transparent;
-	border: 1px solid teal;
+	border: 1px solid #4f3b78;
 	cursor: pointer;
+	&:focus {
+		outline: none;
+	}
 }

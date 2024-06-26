@@ -6,6 +6,7 @@ import Pagination from '../components/UI/Pagination/Pagination'
 import { useFetching } from '../hooks/useFetching/useFetching'
 import { ICoins } from '../types/types'
 import { getPageCount, getPagesArray } from '../utils/pages'
+import Input from './UI/Input/Input'
 
 export default function CoinList() {
 	const [coins, setCoins] = useState<ICoins[] | null>(null)
@@ -98,9 +99,11 @@ export default function CoinList() {
 			</h2>
 			<div className='main__content--coin__list'>
 				<div className='main__content--quick-search'>
-					<input
+					<Input
 						value={searchQuery}
-						onChange={e => setSearchQuery(e.target.value)}
+						onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+							setSearchQuery(e.target.value)
+						}
 						type='text'
 						placeholder='Поиск...'
 					/>
