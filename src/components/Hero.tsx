@@ -3,6 +3,7 @@ import PostService from '../API/PostService'
 import { useFetching } from '../hooks/useFetching/useFetching'
 import { ICoins } from '../types/types'
 import ExtraTable from './ExtraTable'
+import ExtraInfoWrapper from './ExtraInfoWrapper'
 
 export default function Hero() {
 	const [coins, setCoins] = useState<ICoins[] | null>(null)
@@ -84,6 +85,7 @@ export default function Hero() {
 						/>
 					</div>
 				</div>
+				<ExtraInfoWrapper />
 			</section>
 		</>
 	)

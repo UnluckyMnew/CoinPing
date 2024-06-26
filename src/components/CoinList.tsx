@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import PostService from '../API/PostService'
 import Loader from '../components/UI/Loader/Loader'
@@ -6,18 +6,18 @@ import Pagination from '../components/UI/Pagination/Pagination'
 import { useFetching } from '../hooks/useFetching/useFetching'
 import { ICoins } from '../types/types'
 import { getPageCount, getPagesArray } from '../utils/pages'
-import ExtraInfoWrapper from './ExtraInfoWrapper'
 
 export default function CoinList() {
 	const [coins, setCoins] = useState<ICoins[] | null>(null)
-	const [sortedCoins, setSortedCoins] = useState<ICoins[] | null>(null)
 	const [totalPages, setTotalPages] = useState<number[]>([])
-	const [limit] = useState<number>(15)
+	const [limit] = useState<number>(20)
 	const [page, setPage] = useState<number>(1)
 	const [selectedSort, setSelectedSort] = useState({
 		selectedSort: '',
 		selectedSortCheck: false,
 	})
+	const [sortedCoins, setSortedCoins] = useState<ICoins[] | null>(null)
+	const [searchQuery, setSearchQuery] = useState<string>('')
 
 	const [fetchCoins, isLoading, coinError] = useFetching(async () => {
 		const response = await PostService.getAll(limit, page)
@@ -41,6 +41,7 @@ export default function CoinList() {
 	}
 
 	const getSortSetting = (e: React.MouseEvent<HTMLButtonElement>): void => {
+		console.log('изменение метода сортировки')
 		setSelectedSort(prevState => ({
 			...prevState,
 			selectedSort: (e.target as HTMLButtonElement).value,
@@ -49,6 +50,7 @@ export default function CoinList() {
 	}
 
 	const sortCoins = () => {
+		console.log('отработала сортировка')
 		// idk dry lmao*)
 		if (coins && selectedSort.selectedSortCheck) {
 			setSortedCoins(
@@ -82,13 +84,28 @@ export default function CoinList() {
 		sortCoins()
 	}, [selectedSort])
 
+	const sortedAndSearchedCoins = useMemo(() => {
+		return sortedCoins?.filter(coin =>
+			coin.name.toLowerCase().includes(searchQuery.toLowerCase())
+		)
+	}, [searchQuery, sortedCoins])
+
+	console.log('RENDER ALL')
 	return (
 		<div className='main__content' id='market'>
-			<ExtraInfoWrapper/>
 			<h2>
 				<span>Coin Update</span>
 			</h2>
 			<div className='main__content--coin__list'>
+				<div className='main__content--quick-search'>
+					<input
+						value={searchQuery}
+						onChange={e => setSearchQuery(e.target.value)}
+						type='text'
+						placeholder='Поиск...'
+					/>
+				</div>
+
 				<div className='main__content--coin__list--top'>
 					<button
 						value='id'
@@ -133,7 +150,7 @@ export default function CoinList() {
 						</h1>
 					)}
 					{isLoading && <Loader />}
-					{sortedCoins?.map(coin => (
+					{sortedAndSearchedCoins?.map(coin => (
 						<Link
 							to={`/home/${coin.id.toLowerCase()}`}
 							className='coin__row'
