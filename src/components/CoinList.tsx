@@ -98,7 +98,7 @@ export default function CoinList() {
 				<span>Coin Update</span>
 			</h2>
 			<div className='main__content--coin__list'>
-				<div className='main__content--quick-search'>
+				<div className='main__content--coin__list--quick-search'>
 					<Input
 						value={searchQuery}
 						onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
