@@ -1108,3 +1108,65 @@ header .nav ul li a.active {
   border-radius: 5px;
   background: #2f3344;
 }
+
+#pricing {
+  padding: 5rem 0;
+  color: #d7d2dc;
+  font-size: 1.8rem;
+}
+
+.pricing__title {
+  margin-bottom: 5rem;
+  text-align: center;
+}
+.pricing__title h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-family: "Noto Sans Georgian", sans-serif;
+  margin-bottom: 1rem;
+}
+.pricing__title p {
+  font-size: 1.8rem;
+  color: #927fbf;
+}
+
+.pricing__radio {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+.pricing__radio .radio {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.pricing__radio .radio input {
+  display: none;
+}
+.pricing__radio .radio input:checked + label {
+  color: #d7d2dc;
+  font-weight: bold;
+}
+.pricing__radio .radio input:checked + label::after {
+  content: "";
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: #d7d2dc;
+}
+.pricing__radio .radio label {
+  cursor: pointer;
+}
+.pricing__radio .radio label:hover {
+  color: #d7d2dc;
+  font-weight: bold;
+}
+.pricing__radio .radio label:hover::after {
+  content: "";
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: #d7d2dc;
+}
