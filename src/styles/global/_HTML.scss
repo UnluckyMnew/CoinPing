@@ -49,6 +49,13 @@ a {
 
 // --------------------------------
 
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .container {
   max-width: 135rem !important;
   margin: 0 auto !important;
