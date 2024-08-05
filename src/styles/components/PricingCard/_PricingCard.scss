@@ -1,0 +1,10 @@
+@use "../../../styles/global" as *;
+
+.pricing__card {
+  display: flex;
+  width: 32rem;
+  margin: 2rem 0;
+  padding: 1rem;
+  flex-direction: column;
+  border: $border-gray;
+}

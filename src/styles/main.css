@@ -879,6 +879,15 @@ header .nav ul li a.active {
     max-width: 100%;
   }
 }
+.pricing__card {
+  display: flex;
+  width: 32rem;
+  margin: 2rem 0;
+  padding: 1rem;
+  flex-direction: column;
+  border: 1px solid #2f3344;
+}
+
 #main {
   display: flex;
   flex-direction: column;
@@ -1122,60 +1131,64 @@ header .nav ul li a.active {
   font-size: 1.8rem;
 }
 
-.pricing__title {
+.pricing__top {
+  padding: 2rem;
+  border: 1px solid #2f3344;
+}
+.pricing__top .pricing__title {
   margin-bottom: 5rem;
   text-align: center;
 }
-.pricing__title h1 {
+.pricing__top .pricing__title h1 {
   font-size: 3rem;
   text-transform: uppercase;
   font-family: "Noto Sans Georgian", sans-serif;
   margin-bottom: 1rem;
 }
-.pricing__title p {
+.pricing__top .pricing__title p {
   font-size: 1.8rem;
   color: #927fbf;
 }
-
-.pricing__radio {
-  position: absolute;
-  left: 50%;
-  right: 50%;
+.pricing__top .pricing__radio {
   display: flex;
   gap: 2rem;
   justify-content: center;
-  margin-bottom: 5rem;
 }
-.pricing__radio .radio {
+.pricing__top .pricing__radio .radio {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
-.pricing__radio .radio input {
+.pricing__top .pricing__radio .radio input {
   display: none;
 }
-.pricing__radio .radio input:checked + label {
+.pricing__top .pricing__radio .radio input:checked + label {
   color: #d7d2dc;
   font-weight: bold;
 }
-.pricing__radio .radio input:checked + label::after {
+.pricing__top .pricing__radio .radio input:checked + label::after {
   content: "";
   display: block;
   width: 100%;
   height: 0.2rem;
   background: #d7d2dc;
 }
-.pricing__radio .radio label {
+.pricing__top .pricing__radio .radio label {
   cursor: pointer;
 }
-.pricing__radio .radio label:hover {
+.pricing__top .pricing__radio .radio label:hover {
   color: #d7d2dc;
   font-weight: bold;
 }
-.pricing__radio .radio label:hover::after {
+.pricing__top .pricing__radio .radio label:hover::after {
   content: "";
   display: block;
   width: 100%;
   height: 0.2rem;
   background: #d7d2dc;
+}
+
+.pricing__cards {
+  display: flex;
+  justify-content: space-between;
 }
