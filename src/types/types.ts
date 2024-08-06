@@ -114,3 +114,22 @@ export interface ICoin {
 	market_cap_rank: number
 	market_data: IMarket_data
 }
+
+// pricing card
+
+interface IExtra_info {
+	paragraph_1: string
+	paragraph_2: string
+	paragraph_3: string
+	paragraph_4: string
+	paragraph_5: string
+	paragraph_6: string
+}
+
+export interface IPricing_card {
+	id: number
+	title: string
+	info: string
+	price: number
+	extra_info: IExtra_info
+}

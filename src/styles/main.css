@@ -930,10 +930,13 @@ header .nav ul li a.active {
 .pricing__card .card__extra {
   display: flex;
   flex-direction: column;
-  align-items: center;
   text-align: left;
   margin-bottom: 1rem;
   font-size: 1.3rem;
+}
+.pricing__card .card__extra li {
+  color: #d7d2dc;
+  margin-bottom: 0.8rem;
 }
 .pricing__card .card__extra--button button {
   width: 25rem;

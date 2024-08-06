@@ -1,26 +1,35 @@
-export default function PricingCard() {
-  return (
+import { IPricing_card } from '../types/types'
+
+const PricingCard: React.FC<IPricing_card> = ({
+	id,
+	title,
+	info,
+	price,
+	extra_info,
+}) => {
+	return (
 		<div className='pricing__card'>
 			<div className='card__title'>
-				<h2>Аналитик</h2>
+				<h2>
+					{id}. {title}
+				</h2>
 			</div>
 			<div className='card__info'>
-				<p>Для критически важной аналитической работы</p>
+				<p>{info}</p>
 			</div>
-			<div className='card__price'>{`$${999}/mo`}</div>
+			<div className='card__price'>{`$${price}`}</div>
 			<div className='card__extra'>
 				<div className='card__extra--button'>
-					<button>button</button>
+					<button>Subscribe</button>
 				</div>
 				<ul className='card__extra--info'>
-					<li>Кредитов на вызовы в месяц: 500k</li>
-					<li>Лимит вызовов в минуту: 500</li>
-					<li>Конечных точек рыночных данных: 60+</li>
-					<li>Конечные точки эксклюзивных данных</li>
-					<li>Период сбора данных (в годах): 10</li>
-					<li>Приоритетная поддержка по электронной почте</li>
+					{Object.keys(extra_info).map(key => (
+						<li key={key}>{extra_info[key as keyof typeof extra_info]}</li>
+					))}
 				</ul>
 			</div>
 		</div>
 	)
 }
+
+export default PricingCard
