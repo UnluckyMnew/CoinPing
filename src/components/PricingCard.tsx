@@ -24,7 +24,7 @@ const PricingCard: React.FC<IPricing_card> = ({
 				</div>
 				<ul className='card__extra--info'>
 					{Object.keys(extra_info).map(key => (
-						<li key={key}>{extra_info[key as keyof typeof extra_info]}</li>
+						<li key={key}>{key.slice(-1)}. {extra_info[key as keyof typeof extra_info]}</li>
 					))}
 				</ul>
 			</div>
