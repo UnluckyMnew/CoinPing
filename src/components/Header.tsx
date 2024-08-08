@@ -10,7 +10,7 @@ interface INavItems {
 
 export const Header = () => {
 	const location = useLocation()
-	const [navItems, setNavItems] = useState<INavItems[]>([
+	const [navItems] = useState<INavItems[]>([
 		{
 			id: 1,
 			title: 'Home',
@@ -65,14 +65,21 @@ export const Header = () => {
 						if (item.dynamic) {
 							return (
 								<li key={item.id}>
-									<NavLink to={item.link}>{item.title}</NavLink>
+									<NavLink to={item.link} onClick={activeClick}>
+										{item.title}
+									</NavLink>
 								</li>
 							)
 						}
-						if (location.pathname.split("/").pop() === "home") {
+						if (
+							location.pathname.split('/').pop() === 'home' ||
+							location.pathname.split('/').pop() === ''
+						) {
 							return (
 								<li key={item.id}>
-									<a href={item.link}>{item.title}</a>
+									<a href={item.link} onClick={activeClick}>
+										{item.title}
+									</a>
 								</li>
 							)
 						}
