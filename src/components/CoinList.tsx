@@ -155,7 +155,7 @@ export default function CoinList() {
 					{isLoading && <Loader />}
 					{sortedAndSearchedCoins?.map(coin => (
 						<Link
-							to={`/home/${coin.id.toLowerCase()}`}
+							to={`/CoinPing/${coin.id.toLowerCase()}`}
 							className='coin__row'
 							key={coin.id}
 						>

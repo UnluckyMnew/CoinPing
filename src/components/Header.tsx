@@ -7,7 +7,7 @@ export const Header = () => {
 
 	return (
 		<header id='header' className='header'>
-			<NavLink to='/home' className='logo'>
+			<NavLink to='/CoinPing/home' className='logo'>
 				CoinPing
 			</NavLink>
 
@@ -20,19 +20,25 @@ export const Header = () => {
 			<nav className='nav'>
 				<ul>
 					<li>
-						<NavLink to='/home'>Home</NavLink>
+						<NavLink to='/CoinPing/home'>Home</NavLink>
 					</li>
 					<li>
-						<a href='#market'>Market</a>
+						<NavLink to='/CoinPing/pricing'>Pricing</NavLink>
 					</li>
 					<li>
-						<NavLink to='/pricing'>Pricing</NavLink>
+						<a className='nav__w' href='#market'>
+							Market
+						</a>
 					</li>
 					<li>
-						<a href='#whyus'>WhyUs</a>
+						<a className='nav__w' href='#whyus'>
+							WhyUs
+						</a>
 					</li>
 					<li>
-						<a href='#footer'>Contact</a>
+						<a className='nav__w' href='#footer'>
+							Contact
+						</a>
 					</li>
 				</ul>
 			</nav>

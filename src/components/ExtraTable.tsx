@@ -34,7 +34,7 @@ const ExtraTable: React.FC<IExtraTableProps> = ({
 				) : (
 					sortedCoins.slice(0, 6).map(coin => (
 						<Link
-							to={`/home/${coin.id.toLowerCase()}`}
+							to={`/CoinPing/${coin.id.toLowerCase()}`}
 							className='coin__row'
 							key={coin.name}
 						>
