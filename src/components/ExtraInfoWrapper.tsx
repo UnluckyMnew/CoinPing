@@ -1,7 +1,27 @@
+import { useEffect, useState } from 'react'
+import PostService from '../API/PostService'
+import { useFetching } from '../hooks/useFetching/useFetching'
+import { ICoins } from '../types/types'
 import ExtraInfo from './ExtraInfo'
 
 export default function ExtraInfoWrapper() {
-  return (
+	const [marketCap, setMarketCap] = useState<ICoins[]>([])
+	const [totalMarketCap, setTotalMarketCap] = useState<number>(0)
+	const [fetchCoins] = useFetching(async () => {
+		const response = await PostService.getTotalCoinsCount()
+		setMarketCap(response.data)
+	})
+
+	const totalMarketCapitalization = () => {
+		setTotalMarketCap(marketCap.reduce((acc, coin) => acc + coin.market_cap, 0))
+	}
+
+	useEffect(() => {
+		fetchCoins()
+		totalMarketCapitalization()
+	}, [])
+	console.log(totalMarketCap);
+	return (
 		<div className='extra-info__wrapper'>
 			<ExtraInfo title='Торгуемые криптовалюты'>
 				Получите исчерпывающую информацию обо всех криптовалютах, доступных на
@@ -16,8 +36,10 @@ export default function ExtraInfoWrapper() {
 				Некоторая приведенная информация взята с сайта GateIO и предоставляется
 				по принципу «как есть», без каких-либо гарантий.
 			</ExtraInfo>
-			<ExtraInfo title='lorem lorem lorem'>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias harum ipsam accusantium maxime suscipit enim eum accusamus sit beatae modi provident ipsa iste, vero ut quae excepturi atque saepe aspernatur temporibus dignissimos architecto rem. Non quos voluptatem odio, autem illum debitis qui sunt tenetur eius adipisci laudantium iste quia vitae asperiores beatae nihil ab est corrupti? Voluptate, provident ipsa architecto accusantium impedit a exercitationem qui aliquid nostrum laboriosam optio et quas vero ad vitae ab?
+			<ExtraInfo title='Капитализация криптовалют'>
+				Общая рыночная капитализация криптовалют составляет ${totalMarketCap}.
+				Доминирование Bitcoin находится на 46.021% , а доминирование Ethereum —
+				на 11.83% Объем торгов за последние 24 часа составляет $47.03 B
 			</ExtraInfo>
 		</div>
 	)
