@@ -769,9 +769,12 @@ header .nav ul li a.active {
   height: 2rem;
   margin-bottom: 3.5rem;
   line-height: 2rem;
-  color: #484c64;
+  color: #989bad;
   font-size: 1.8rem;
   overflow: hidden;
+}
+.extra-info .info span {
+  color: #d7d2dc;
 }
 .extra-info .info.active {
   height: -moz-fit-content;
@@ -1022,7 +1025,7 @@ header .nav ul li a.active {
   padding: 0.5rem 0.1rem 0.5rem 0.5rem;
 }
 .coin__content--main__information .main__information--top .top__title .top__title--spans .top__title--span__symbol {
-  color: #484c64;
+  color: #989bad;
   padding: 0.5rem 0;
 }
 .coin__content--main__information .main__information--top .top__title .top__title--spans .top__title--span__rank {
@@ -1035,7 +1038,7 @@ header .nav ul li a.active {
   text-wrap: nowrap;
 }
 .coin__content--main__information .main__information--top .top__title .top__title--date__genesis {
-  color: #484c64;
+  color: #989bad;
   padding: 0.5rem 0;
 }
 .coin__content--main__information .main__information--top .top__price {
@@ -1106,7 +1109,7 @@ header .nav ul li a.active {
   font-size: 2.6rem;
 }
 .coin__content--main__information .main__information--description p {
-  color: #484c64;
+  color: #989bad;
   text-align: justify;
 }
 .coin__content--main__information .main__information--description p a {

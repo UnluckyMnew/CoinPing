@@ -1,26 +1,75 @@
 import { useEffect, useState } from 'react'
 import PostService from '../API/PostService'
 import { useFetching } from '../hooks/useFetching/useFetching'
-import { ICoins } from '../types/types'
+import { ICoin, ICoins } from '../types/types'
 import ExtraInfo from './ExtraInfo'
 
 export default function ExtraInfoWrapper() {
-	const [marketCap, setMarketCap] = useState<ICoins[]>([])
+	const [coins, setCoins] = useState<ICoins[]>([])
 	const [totalMarketCap, setTotalMarketCap] = useState<number>(0)
+	const [tradingVolumeOverTheLast24, settradingVolumeOverTheLast24] =
+		useState<number>(0)
+
+	const [bitcoin, setBitcoin] = useState<ICoins | null>(null)
+	const [bitcoinDominancePercentage, setBitcoinDominancePercentage] =
+		useState<number>(0)
+	const [ethereum, setEthereum] = useState<ICoins | null>(null)
+	const [ethereumDominancePercentage, setEthereumDominancePercentage] =
+		useState<number>(0)
+
 	const [fetchCoins] = useFetching(async () => {
 		const response = await PostService.getTotalCoinsCount()
-		setMarketCap(response.data)
+		setCoins(response.data)
+		setBitcoin(response.data[0])
+		setEthereum(response.data[1])
 	})
 
 	const totalMarketCapitalization = () => {
-		setTotalMarketCap(marketCap.reduce((acc, coin) => acc + coin.market_cap, 0))
+		setTotalMarketCap(coins.reduce((acc, coin) => acc + coin.market_cap, 0))
+		settradingVolumeOverTheLast24(
+			coins.reduce((acc, coin) => acc + coin.circulating_supply, 0)
+		)
+	}
+
+	const coinsDominancePercentage = () => {
+		if (bitcoin) {
+			setBitcoinDominancePercentage(
+				Number(((bitcoin.market_cap / totalMarketCap) * 100).toFixed(2))
+			)
+		}
+		if (ethereum) {
+			setEthereumDominancePercentage(
+				Number(((ethereum.market_cap / totalMarketCap) * 100).toFixed(2))
+			)
+		}
 	}
 
 	useEffect(() => {
 		fetchCoins()
-		totalMarketCapitalization()
 	}, [])
-	console.log(totalMarketCap);
+
+	useEffect(() => {
+		totalMarketCapitalization()
+	}, [coins])
+
+	useEffect(() => {
+		coinsDominancePercentage()
+	}, [bitcoin, ethereum, totalMarketCap])
+
+	// temp -----------------------------------------------------------------------|
+	useEffect(() => {
+		console.log(bitcoinDominancePercentage)
+		console.log(ethereumDominancePercentage)
+	}, [bitcoinDominancePercentage, ethereumDominancePercentage])
+	// temp -----------------------------------------------------------------------|
+
+	const numberFormatter = (number: number) => {
+		return `$${number
+			.toString()
+			.replace(/(^0|[A-Za-zА-Яа-яЁё]|\s)/, '')
+			.replace(/(\d)(?=(\d{3})+(\D|$))/g, '$1.')}`
+	}
+
 	return (
 		<div className='extra-info__wrapper'>
 			<ExtraInfo title='Торгуемые криптовалюты'>
@@ -37,9 +86,12 @@ export default function ExtraInfoWrapper() {
 				по принципу «как есть», без каких-либо гарантий.
 			</ExtraInfo>
 			<ExtraInfo title='Капитализация криптовалют'>
-				Общая рыночная капитализация криптовалют составляет ${totalMarketCap}.
-				Доминирование Bitcoin находится на 46.021% , а доминирование Ethereum —
-				на 11.83% Объем торгов за последние 24 часа составляет $47.03 B
+				Общая рыночная капитализация криптовалют составляет{' '}
+				<span>{numberFormatter(totalMarketCap)}</span>. Доминирование Bitcoin
+				находится на <span>{bitcoinDominancePercentage}%</span>, а доминирование
+				Ethereum — на <span>{ethereumDominancePercentage}%</span> Объем торгов
+				за последние 24 часа составляет{' '}
+				<span>{numberFormatter(tradingVolumeOverTheLast24)}</span>
 			</ExtraInfo>
 		</div>
 	)

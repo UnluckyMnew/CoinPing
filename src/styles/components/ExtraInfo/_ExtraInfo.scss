@@ -20,6 +20,10 @@
     color: $color-info;
     font-size: $text-normal;
     overflow: hidden;
+
+    span {
+      color: $color-100;
+    }
   }
 
   & .info.active {
