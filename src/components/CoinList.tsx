@@ -7,6 +7,7 @@ import { useFetching } from '../hooks/useFetching/useFetching'
 import { ICoins } from '../types/types'
 import { getPageCount, getPagesArray } from '../utils/pages'
 import Input from './UI/Input/Input'
+import { numberFormatter } from '../utils/priceFormat'
 
 export default function CoinList() {
 	const [coins, setCoins] = useState<ICoins[] | null>(null)
@@ -177,7 +178,7 @@ export default function CoinList() {
 								{coin.price_change_percentage_24h + `%`}
 							</div>
 							<div className='coin__row--market__cap'>
-								{`$` + coin.market_cap}
+								{numberFormatter(coin.market_cap)}
 							</div>
 						</Link>
 					))}

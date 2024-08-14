@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react'
 import PostService from '../API/PostService'
 import { useFetching } from '../hooks/useFetching/useFetching'
-import { ICoin, ICoins } from '../types/types'
+import { ICoins } from '../types/types'
+import { numberFormatter } from '../utils/priceFormat'
 import ExtraInfo from './ExtraInfo'
 
 export default function ExtraInfoWrapper() {
 	const [coins, setCoins] = useState<ICoins[]>([])
 	const [totalMarketCap, setTotalMarketCap] = useState<number>(0)
-	const [tradingVolumeOverTheLast24, settradingVolumeOverTheLast24] =
-		useState<number>(0)
 
 	const [bitcoin, setBitcoin] = useState<ICoins | null>(null)
 	const [bitcoinDominancePercentage, setBitcoinDominancePercentage] =
@@ -26,9 +25,6 @@ export default function ExtraInfoWrapper() {
 
 	const totalMarketCapitalization = () => {
 		setTotalMarketCap(coins.reduce((acc, coin) => acc + coin.market_cap, 0))
-		settradingVolumeOverTheLast24(
-			coins.reduce((acc, coin) => acc + coin.circulating_supply, 0)
-		)
 	}
 
 	const coinsDominancePercentage = () => {
@@ -63,13 +59,6 @@ export default function ExtraInfoWrapper() {
 	}, [bitcoinDominancePercentage, ethereumDominancePercentage])
 	// temp -----------------------------------------------------------------------|
 
-	const numberFormatter = (number: number) => {
-		return `$${number
-			.toString()
-			.replace(/(^0|[A-Za-zА-Яа-яЁё]|\s)/, '')
-			.replace(/(\d)(?=(\d{3})+(\D|$))/g, '$1.')}`
-	}
-
 	return (
 		<div className='extra-info__wrapper'>
 			<ExtraInfo title='Торгуемые криптовалюты'>
@@ -89,9 +78,7 @@ export default function ExtraInfoWrapper() {
 				Общая рыночная капитализация криптовалют составляет{' '}
 				<span>{numberFormatter(totalMarketCap)}</span>. Доминирование Bitcoin
 				находится на <span>{bitcoinDominancePercentage}%</span>, а доминирование
-				Ethereum — на <span>{ethereumDominancePercentage}%</span> Объем торгов
-				за последние 24 часа составляет{' '}
-				<span>{numberFormatter(tradingVolumeOverTheLast24)}</span>
+				Ethereum — на <span>{ethereumDominancePercentage}%</span>.
 			</ExtraInfo>
 		</div>
 	)

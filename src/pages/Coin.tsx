@@ -203,6 +203,7 @@ export default function Coin() {
 									<div className='main__information--description'>
 										<h3>{coin?.name}</h3>
 										<p
+											// not recommended
 											dangerouslySetInnerHTML={{
 												__html: coin?.description.en!,
 											}}
