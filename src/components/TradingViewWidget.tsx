@@ -1,6 +1,6 @@
 import { memo, useEffect, useRef } from 'react'
 
-function TradingViewWidget() {
+function TradingViewWidget({ id }: { id: string }) {
 	const container = useRef<HTMLDivElement | null>(null)
 
 	useEffect(() => {
@@ -13,8 +13,8 @@ function TradingViewWidget() {
         {
           "width": "958",
           "height": "500",
-          "symbol": "NASDAQ:AAPL",
-          "interval": "D",
+          "symbol": "${id}",
+          "interval": "1",
           "timezone": "Europe/Moscow",
           "theme": "dark",
           "style": "3",

@@ -204,7 +204,7 @@ export default function Coin() {
 								</section>
 
 								<section>
-									<TradingViewWidget />
+									<TradingViewWidget id={coin?.symbol ?? ''} />
 								</section>
 
 								<section id='third'>
