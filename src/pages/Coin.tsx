@@ -4,6 +4,7 @@ import PostService from '../API/PostService'
 import Loader from '../components/UI/Loader/Loader'
 import { useFetching } from '../hooks/useFetching/useFetching'
 import { ICoin } from '../types/types'
+import TradingViewWidget from '../components/TradingViewWidget'
 
 export default function Coin() {
 	const { id } = useParams()
@@ -60,6 +61,9 @@ export default function Coin() {
 		changeProgress()
 		priceTrend()
 	}, [coin])
+
+	// -----------------------------------------------------------------------
+	// -----------------------------------------------------------------------
 
 	return (
 		<section id='coin' className='coin__section'>
@@ -197,6 +201,10 @@ export default function Coin() {
 											</div>
 										</div>
 									</div>
+								</section>
+
+								<section>
+									<TradingViewWidget />
 								</section>
 
 								<section id='third'>
