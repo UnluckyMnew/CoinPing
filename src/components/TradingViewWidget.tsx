@@ -13,11 +13,11 @@ function TradingViewWidget({ id }: { id: string }) {
         {
           "width": "958",
           "height": "500",
-          "symbol": "${id}",
+          "symbol": "CRYPTO:${id}USD",
           "interval": "1",
           "timezone": "Europe/Moscow",
           "theme": "dark",
-          "style": "3",
+          "style": "1",
           "locale": "ru",
           "backgroundColor": "#0d0618",
           "gridColor": "rgba(255, 255, 255, 0.06)",
@@ -33,15 +33,6 @@ function TradingViewWidget({ id }: { id: string }) {
 	return (
 		<div className='tradingview-widget-container' ref={container}>
 			<div className='tradingview-widget-container__widget'></div>
-			<div className='tradingview-widget-copyright'>
-				<a
-					href='https://ru.tradingview.com/'
-					rel='noopener nofollow'
-					target='_blank'
-				>
-					{/* <span className='blue-text'>Все рынки на TradingView</span> */}
-				</a>
-			</div>
 		</div>
 	)
 }
